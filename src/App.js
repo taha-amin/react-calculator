@@ -10,7 +10,26 @@ function App() {
   const [total, setTotal] = useState(false);
 
   //FUNCTION DECLARATIONS
-  const inputNum = (e) => {};
+  const inputNum = (e) => {
+    if (curState.includes(".") && e.target.innerText === ".") return;
+
+    if (total) {
+      setPreState("");
+    }
+
+    curState
+      ? setCurState((pre) => pre + e.target.innerText)
+      : setCurState(e.target.innerText);
+    setTotal(false);
+  };
+
+  useEffect(() => {
+    setInput(curState);
+  }, [curState]);
+
+  useEffect(() => {
+    setInput("0");
+  }, []);
 
   const operatorType = (e) => {};
 
