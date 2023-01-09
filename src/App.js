@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="container">
       <div className="wrapper">
-        <div className="screen"></div>
+        <div className="screen">{input}</div>
         <div className="btn light-gray" onClick={reset}>
           AC
         </div>
