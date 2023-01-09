@@ -1,6 +1,27 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  //STATE DECLARATIONS
+  const [preState, setPreState] = useState("");
+  const [curState, setCurState] = useState("");
+  const [input, setInput] = useState("0");
+  const [operator, setOperator] = useState(null);
+  const [total, setTotal] = useState(false);
+
+  //FUNCTION DECLARATIONS
+  const inputNum = (e) => {};
+
+  const operatorType = (e) => {};
+
+  const equals = (e) => {};
+
+  const minusPlus = () => {};
+
+  const percent = () => {};
+
+  const reset = () => {};
+
   return (
     <div className="container">
       <div className="wrapper">
@@ -14,7 +35,7 @@ function App() {
         <div className="btn light-gray" onClick={minusPlus}>
           +/-
         </div>
-        <div className="btn orange" onClick={operator}>
+        <div className="btn orange" onClick={operatorType}>
           /
         </div>
         <div className="btn light-gray" onClick={inputNum}>
@@ -26,7 +47,7 @@ function App() {
         <div className="btn light-gray" onClick={inputNum}>
           9
         </div>
-        <div className="btn orange" onClick={operator}>
+        <div className="btn orange" onClick={operatorType}>
           x
         </div>
         <div className="btn light-gray" onClick={inputNum}>
@@ -38,7 +59,7 @@ function App() {
         <div className="btn light-gray" onClick={inputNum}>
           6
         </div>
-        <div className="btn orange" onClick={operator}>
+        <div className="btn orange" onClick={operatorType}>
           +
         </div>
         <div className="btn light-gray" onClick={inputNum}>
@@ -50,7 +71,7 @@ function App() {
         <div className="btn light-gray" onClick={inputNum}>
           3
         </div>
-        <div className="btn orange" onClick={operator}>
+        <div className="btn orange" onClick={operatorType}>
           -
         </div>
         <div className="btn light-gray" onClick={inputNum}>
@@ -59,7 +80,7 @@ function App() {
         <div className="btn light-gray" onClick={inputNum}>
           .
         </div>
-        <div className="btn orange" onClick={equal}>
+        <div className="btn orange" onClick={equals}>
           =
         </div>
       </div>
