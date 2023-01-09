@@ -39,7 +39,11 @@ function App() {
 
   const percent = () => {};
 
-  const reset = () => {};
+  const reset = () => {
+    setPreState("");
+    setCurState("");
+    setInput("0");
+  };
 
   return (
     <div className="container">
