@@ -31,7 +31,17 @@ function App() {
     setInput("0");
   }, []);
 
-  const operatorType = (e) => {};
+  const operatorType = (e) => {
+    setTotal(false);
+    setOperator(e.target.innerText);
+    if (curState === "") return;
+    if (preState !== "") {
+      equals();
+    } else {
+      setPreState(curState);
+      setCurState("");
+    }
+  };
 
   const equals = (e) => {};
 
