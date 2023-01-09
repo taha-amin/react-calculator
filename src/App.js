@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { NumericFormat } from "react-number-format";
 
 function App() {
   //STATE DECLARATIONS
@@ -43,7 +44,34 @@ function App() {
     }
   };
 
-  const equals = (e) => {};
+  const equals = (e) => {
+    if (e?.target.innerText === "=") {
+      setTotal(true);
+    }
+
+    let calc;
+
+    switch (operator) {
+      case "/":
+        calc = String(parseFloat(preState) / parseFloat(curState));
+        break;
+      case "+":
+        calc = String(parseFloat(preState) + parseFloat(curState));
+        break;
+      case "x":
+        calc = String(parseFloat(preState) * parseFloat(curState));
+        break;
+      case "-":
+        calc = String(parseFloat(preState) - parseFloat(curState));
+        break;
+      default:
+        return;
+    }
+
+    setInput("");
+    setPreState(calc);
+    setCurState("");
+  };
 
   const minusPlus = () => {};
 
@@ -58,7 +86,21 @@ function App() {
   return (
     <div className="container">
       <div className="wrapper">
-        <div className="screen">{input}</div>
+        <div className="screen">
+          {input !== "" || input === "0" ? (
+            <NumericFormat
+              value={input}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          ) : (
+            <NumericFormat
+              value={preState}
+              displayType={"text"}
+              thousandSeparator={true}
+            />
+          )}
+        </div>
         <div className="btn light-gray" onClick={reset}>
           AC
         </div>
