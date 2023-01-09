@@ -81,7 +81,11 @@ function App() {
     }
   };
 
-  const percent = () => {};
+  const percent = () => {
+    preState
+      ? setCurState(String((parseFloat(curState) / 100) * preState))
+      : setCurState(String(parseFloat(curState) / 100));
+  };
 
   const reset = () => {
     setPreState("");
